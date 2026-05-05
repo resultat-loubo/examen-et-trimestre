@@ -1,0 +1,377 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Devoirs - Troisième & Terminale</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:#f0f1f2;
+color:#222;
+}
+
+header{
+background:linear-gradient(135deg,#0b3d91,#1e5fd8);
+color:white;
+padding:25px;
+text-align:center;
+}
+
+header h1{
+font-size:32px;
+margin-bottom:10px;
+}
+
+header p{
+font-size:18px;
+}
+
+.hero{
+padding:50px 20px;
+text-align:center;
+background:white;
+}
+
+.hero h2{
+font-size:32px;
+color:#0b3d91;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:18px;
+max-width:900px;
+margin:auto;
+line-height:1.8;
+}
+
+section{
+padding:50px 20px;
+max-width:1200px;
+margin:auto;
+}
+
+.title{
+font-size:30px;
+color:#0b3d91;
+margin-bottom:25px;
+text-align:center;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:18px;
+box-shadow:0 8px 18px rgba(0,0,0,0.08);
+}
+
+.card h3{
+color:#002868;
+margin-bottom:12px;
+}
+
+.card p{
+margin-bottom:18px;
+}
+
+.btn{
+display:inline-block;
+padding:12px 18px;
+margin:5px 5px 0 0;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
+cursor:pointer;
+border:none;
+}
+
+.pdf{background:#d93025;color:white;}
+.image{background:#34a853;color:white;}
+.pdf1{background:#2201fe;color:white;}
+.image1{background:#a69c29;color:white;}
+.pdf2{background:#a61414;color:white;}
+.image2{background:#337c99;color:white;}
+
+.viewer{
+display:none;
+margin-top:20px;
+padding:20px;
+background:#eef3ff;
+border-radius:15px;
+}
+
+.viewer img{
+width:100%;
+max-width:320px;
+border-radius:12px;
+margin:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
+
+.viewer a{
+display:block;
+margin:10px 0;
+padding:12px;
+background:white;
+border-radius:10px;
+text-decoration:none;
+color:#0b3d91;
+font-weight:bold;
+}
+
+footer{
+background:#4f7d6f;
+color:white;
+text-align:center;
+padding:25px;
+margin-top:40px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>📚 Devoirs Disponibles</h1>
+<p>Collège Privé Loubo de Grand-Zattry</p>
+<a href="index.html" class="menu-item">Accueil</a>
+</header>
+
+<section class="hero">
+<h2>Devoirs de Niveau Disponibles</h2>
+<p>
+Bienvenue sur la plateforme officielle des devoirs scolaires.
+Les élèves peuvent consulter ici les devoirs disponibles pour le niveau <strong>Troisième</strong> et le niveau <strong>Terminale</strong>, en format image ou PDF.
+Travaillez, révisez et préparez vos examens avec les ressources mises à votre disposition.
+</p>
+</section>
+
+<section>
+<h2 class="title">Classe de Troisième</h2>
+
+<div class="grid">
+<div class="card">
+<h3>Mathématiques</h3>
+<p>Équations, géométrie et statistiques.</p>
+
+<button class="btn image" onclick="toggleBox('img3math')">🖼 Voir Images</button>
+<button class="btn pdf" onclick="toggleBox('pdf3math')">📄 Voir PDF</button>
+
+<div class="viewer" id="img3math">
+<img src="images/troisieme1.jpg">
+<img src="images/troisieme2.jpg">
+<img src="images/troisieme3.jpg">
+</div>
+
+<div class="viewer" id="pdf3math">
+<a href="pdf/troisieme1.pdf" target="_blank">📄 Devoir 1</a>
+<a href="pdf/troisieme2.pdf" target="_blank">📄 Devoir 2</a>
+<a href="pdf/troisieme3.pdf" target="_blank">📄 Devoir 3</a>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="grid">
+<div class="card">
+<h3>Physique-Chimie</h3>
+<p>Équations, géométrie et statistiques.</p>
+
+<button class="btn image" onclick="toggleBox('img3pc')">🖼 Voir Images</button>
+<button class="btn pdf" onclick="toggleBox('pdf3pc')">📄 Voir PDF</button>
+
+<div class="viewer" id="img3pc">
+<img src="images/troisieme1.jpg">
+<img src="images/troisieme2.jpg">
+<img src="images/troisieme3.jpg">
+</div>
+
+<div class="viewer" id="pdf3pc">
+<a href="pdf/troisieme1.pdf" target="_blank">📄 Devoir 1</a>
+<a href="pdf/troisieme2.pdf" target="_blank">📄 Devoir 2</a>
+<a href="pdf/troisieme3.pdf" target="_blank">📄 Devoir 3</a>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="grid">
+<div class="card">
+<h3>Svt</h3>
+
+<button class="btn image" onclick="toggleBox('img3svt')">🖼 Voir Images</button>
+<button class="btn pdf" onclick="toggleBox('pdf3svt')">📄 Voir PDF</button>
+
+<div class="viewer" id="img3svt">
+<img src="images/troisieme1.jpg">
+<img src="images/troisieme2.jpg">
+<img src="images/troisieme3.jpg">
+</div>
+
+<div class="viewer" id="pdf3svt">
+<a href="pdf/troisieme1.pdf" target="_blank">📄 Devoir 1</a>
+<a href="pdf/troisieme2.pdf" target="_blank">📄 Devoir 2</a>
+<a href="pdf/troisieme3.pdf" target="_blank">📄 Devoir 3</a>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<h2 class="title">Classe de Terminale A</h2>
+
+<div class="grid">
+<div class="card">
+<h3>Philosophie</h3>
+<p>Dissertation, commentaire et culture générale.</p>
+
+<button class="btn image1" onclick="toggleBox('imgTA1')">🖼 Voir Images</button>
+<button class="btn pdf1" onclick="toggleBox('pdfTA1')">📄 Voir PDF</button>
+
+<div class="viewer" id="imgTA1">
+<img src="JD/JD5.jpeg">
+<img src="JD/JD10.jpg">
+<img src="JD/JD0.jpg">
+</div>
+
+<div class="viewer" id="pdfTA1">
+<a href="JD/Résultats.pdf" target="_blank">📄 Sujet 1</a>
+<a href="pdf/terminale2.pdf" target="_blank">📄 Sujet 2</a>
+<a href="pdf/terminale3.pdf" target="_blank">📄 Sujet 3</a>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="grid">
+<div class="card">
+<h3>Français</h3>
+<p>Dissertation et culture générale.</p>
+
+<button class="btn image1" onclick="toggleBox('imgTA2')">🖼 Voir Images</button>
+<button class="btn pdf1" onclick="toggleBox('pdfTA2')">📄 Voir PDF</button>
+
+<div class="viewer" id="imgTA2">
+<img src="JD/JD5.jpeg">
+<img src="JD/JD10.jpg">
+<img src="JD/JD0.jpg">
+</div>
+
+<div class="viewer" id="pdfTA2">
+<a href="JD/Résultats.pdf" target="_blank">📄 Sujet 1</a>
+<a href="pdf/terminale2.pdf" target="_blank">📄 Sujet 2</a>
+<a href="pdf/terminale3.pdf" target="_blank">📄 Sujet 3</a>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<h2 class="title">©️ Classe de Terminale D</h2>
+
+<div class="grid">
+<div class="card">
+<h3>Mathématiques X4</h3>
+<p>Équations, géométrie et statistiques.</p>
+
+<button class="btn image2" onclick="toggleBox('imgTD1')">🖼 Voir Images</button>
+<button class="btn pdf2" onclick="toggleBox('pdfTD1')">📄 Voir PDF</button>
+
+<div class="viewer" id="imgTD1">
+<img src="images/troisieme1.jpg">
+<img src="images/troisieme2.jpg">
+<img src="images/troisieme3.jpg">
+</div>
+
+<div class="viewer" id="pdfTD1">
+<a href="pdf/troisieme1.pdf" target="_blank">📄 Devoir 1</a>
+<a href="pdf/troisieme2.pdf" target="_blank">📄 Devoir 2</a>
+<a href="pdf/troisieme3.pdf" target="_blank">📄 Devoir 3</a>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="grid">
+<div class="card">
+<h3>Physique-Chimie X4</h3>
+<p>Équations, géométrie et statistiques.</p>
+
+<button class="btn image2" onclick="toggleBox('imgTD2')">🖼 Voir Images</button>
+<button class="btn pdf2" onclick="toggleBox('pdfTD2')">📄 Voir PDF</button>
+
+<div class="viewer" id="imgTD2">
+<img src="images/troisieme1.jpg">
+<img src="images/troisieme2.jpg">
+<img src="images/troisieme3.jpg">
+</div>
+
+<div class="viewer" id="pdfTD2">
+<a href="pdf/troisieme1.pdf" target="_blank">📄 Devoir 1</a>
+<a href="pdf/troisieme2.pdf" target="_blank">📄 Devoir 2</a>
+<a href="pdf/troisieme3.pdf" target="_blank">📄 Devoir 3</a>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="grid">
+<div class="card">
+<h3>Svt X4</h3>
+
+<button class="btn image2" onclick="toggleBox('imgTD3')">🖼 Voir Images</button>
+<button class="btn pdf2" onclick="toggleBox('pdfTD3')">📄 Voir PDF</button>
+
+<div class="viewer" id="imgTD3">
+<img src="images/troisieme1.jpg">
+<img src="images/troisieme2.jpg">
+<img src="images/troisieme3.jpg">
+</div>
+
+<div class="viewer" id="pdfTD3">
+<a href="pdf/troisieme1.pdf" target="_blank">📄 Devoir 1</a>
+<a href="pdf/troisieme2.pdf" target="_blank">📄 Devoir 2</a>
+<a href="pdf/troisieme3.pdf" target="_blank">📄 Devoir 3</a>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<p>&copy; 2026 Collège Privé Loubo - Plateforme des Devoirs</p>
+</footer>
+
+<script>
+function toggleBox(id){
+let box = document.getElementById(id);
+
+if(box.style.display === "block"){
+box.style.display = "none";
+}else{
+box.style.display = "block";
+}
+}
+</script>
+
+</body>
+</html>
