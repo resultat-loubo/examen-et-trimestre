@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -22,7 +21,7 @@
 <meta name="twitter:title" content="Collège Privé Loubo de Grand-Zattry">
 <meta name="twitter:description" content="Portail officiel du Collège Privé Loubo de Grand-Zattry">
 <link rel="canonical" href="https://resultat-loubo.github.io/examen-et-trimestre/">
-<link rel="icon" href="JD3.jpg">
+<link rel="icon" href="ecole.jpeg">
 
 <style>
 *{
@@ -34,12 +33,12 @@ font-family:Arial, Helvetica, sans-serif;
 
 body{
 background:#f5f7fa;
-color:#222;
+color:#f5f0f0;
 line-height:1.6;
 }
 
 header{
- background:linear-gradient(135deg,#f95a03,#f8f9fa,#10fd04);    
+ background:linear-gradient(135deg,#f57c04,#0d0d0e,#04fd36);    
 color:white;
 padding:15px 40px;
 position:sticky;
@@ -93,7 +92,7 @@ color:#ffd700;
 }
 
 .hero{
-background:url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+background:url('ecole.jpeg') center/cover no-repeat;
 height:85vh;
 display:flex;
 align-items:center;
@@ -130,7 +129,7 @@ margin-bottom:30px;
 .btn{
 display:inline-block;
 padding:14px 28px;
-background:#ffd700;
+background:#32ce07;
 color:#000;
 font-weight:bold;
 text-decoration:none;
@@ -139,7 +138,8 @@ transition:0.3s;
 }
 
 .btn:hover{
-background:white;
+background:linear-gradient(135deg,#f57c04,#f8f8fa,#04fd36);  
+
 }
 
 section{
@@ -160,10 +160,10 @@ gap:25px;
 }
 
 .card{
-background:rgb(132, 125, 125);
+ background:linear-gradient(135deg,#f0ebe7,#3d3d39,#04f430);  
 padding:25px;
-border-radius:12px;
-box-shadow:0 6px 18px rgba(0,0,0,0.08);
+border-radius:30px;
+box-shadow:0 6px 18px rgba(15, 7, 7, 0.08);
 transition:0.3s;
 }
 
@@ -185,11 +185,83 @@ background:#4f7d6f;
 color:white;
 padding:30px 20px;
 text-align:center;
-}
-
+} 
 footer p{
 margin:8px 0;
 }
+
+/* AJOUT MENU */
+.menu-btn{
+font-size:32px;
+cursor:pointer;
+background:none;
+border:none;
+color:white;
+margin-right:15px;
+}
+
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(6, 6, 6, 0.4);
+display:none;
+z-index:999;
+}
+
+.overlay.active{
+display:block;
+}
+
+.sidebar{
+position:fixed;
+top:0;
+left:-320px;
+width:300px;
+height:100%;
+background:white;
+box-shadow:2px 0 10px rgba(0,0,0,0.2);
+transition:0.3s;
+z-index:1001;
+padding:20px;
+overflow-y:auto;
+border-top-right-radius:20px;
+border-bottom-right-radius:20px;
+}
+
+.sidebar.active{
+left:0;
+}
+
+.sidebar h2{
+color:#0b3d91;
+margin-bottom:20px;
+}
+
+.close-btn{
+font-size:28px;
+cursor:pointer;
+float:right;
+color:#000;
+}
+
+.menu-item{
+display:block;
+padding:15px;
+margin-bottom:12px;
+background:#f2f2f2;
+border-radius:12px;
+text-decoration:none;
+color:#222;
+font-weight:bold;
+}
+
+.menu-item:hover{
+background:#e4e6eb;
+}
+
 @media(max-width:768px){
 .hero-content h2{
 font-size:32px;
@@ -207,20 +279,32 @@ justify-content:center;
 
 <body>
 
-<header>
-<div class="navbar">
-<div class="logo-box">
-<img src="JD3.jpg" alt="Logo Collège Privé Loubo">
-<h1>Collège Privé Loubo</h1>
+<!-- OVERLAY -->
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
+<!-- MENU LATÉRAL -->
+<div class="sidebar" id="sidebar">
+<span class="close-btn" onclick="closeMenu()">✖</span>
+<h2>Menu</h2>
+
+<a href="index.html" class="menu-item">Accueil</a>
+<a href="administration.html" class="menu-item">Administration</a>
+<a href="exercices.html" class="menu-item">Exèrcices</a>
+<a href="resultats.html" class="menu-item">Résultats</a>
+<a href="info.html" class="menu-item">Contact</a>
 </div>
 
-<nav>
-<ul>
-<li><a href="#">Accueil</a></li>
-<a href="resultats.html">Résultats</a>
-<a href="info.html">Contact</a>
-</ul>
-</nav>
+<header>
+<div class="navbar">
+
+<div style="display:flex;align-items:center;">
+<button class="menu-btn" onclick="openMenu()">☰</button>
+
+<div class="logo-box">
+<img src="JD3.jpg" alt="Logo Collège Privé Loubo">
+<h1>Collège Privé Loubo de Grand-Zattry</h1>
+</div>
+</div>
 </div>
 </header>
 
@@ -230,32 +314,29 @@ justify-content:center;
 <p>Bienvenue sur le portail officiel du Collège Privé Loubo de Grand-Zattry, établissement engagé dans la formation académique et morale des apprenants.</p>
 <a href="resultats.html" class="btn">Consulter les résultats</a>
 </div>
-</section>
+</section> 
 
-<section>
-<h2 class="section-title">Nos Services</h2>
-<div class="grid"><!-- Remplace seulement la carte "Résultats Scolaires" par ce code -->
+<section> 
+<U><h2 class="section-title">Nos Services</h2></U>
+<div class="grid">
 
-<a href="resultats.html" style="text-decoration:none; color:inherit;">
-    <div class="card">
-        <h3>Résultats Scolaires</h3>
-        <p>Consultez rapidement les résultats, moyennes, classements et bulletins officiels.</p>
-    </div>
+<a href="resultats.html" style="text-decoration:none; color:inherit;">   
+<div class="card">
+<h3>Résultats Scolaires</h3>
+<p>Consultez rapidement les résultats, moyennes, classements et bulletins officiels.</p>
+</div>
 </a>
 
+<a href="info.html" style="text-decoration:none; color:inherit;"> 
 <div class="card">
-<h3>Inscriptions</h3>
-<p>Procédure d'admission simplifiée pour les nouveaux élèves et réinscriptions.</p>
+<h3>Administration</h3>
+<p> Clique pour contacter facilement l'administration📞.</p>
 </div>
+</a>
 
 <div class="card">
 <h3>Vie Scolaire</h3>
 <p>Suivi des activités pédagogiques, discipline, clubs et événements éducatifs.</p>
-</div>
-
-<div class="card">
-<h3>Administration</h3>
-<p>Accès aux informations administratives, règlements et documents officiels.</p>
 </div>
 
 </div>
@@ -294,9 +375,21 @@ justify-content:center;
 </section>
 
 <footer>
-<p>&copy; 2026 Collège Privé Loubo de Grand-Zattry - Tous droits réservés</p>
+<p>&copy; 2027 Collège Privé Loubo de Grand-Zattry - Tous droits réservés</p>
 <p>Portail Officiel de l'Établissement</p>
 </footer>
+
+<script>
+function openMenu(){
+document.getElementById("sidebar").classList.add("active");
+document.getElementById("overlay").classList.add("active");
+}
+
+function closeMenu(){
+document.getElementById("sidebar").classList.remove("active");
+document.getElementById("overlay").classList.remove("active");
+}
+</script>
 
 </body>
 </html>
