@@ -1,0 +1,413 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admissions - Collège Privé Loubo</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#f5f7fa;color:#222}
+header{
+background:linear-gradient(135deg,#f95a03,#fff,#10fd04);
+padding:20px;text-align:center;
+box-shadow:0 4px 10px rgba(0,0,0,.1)
+}
+.hero{
+padding:70px 20px;text-align:center;
+background:linear-gradient(135deg,#0b3d91,#1e5fd8);
+color:#fff
+}
+.hero h2{font-size:42px;margin-bottom:20px}
+.hero p{font-size:20px;max-width:800px;margin:auto}
+.btn{
+display:inline-block;margin-top:25px;
+padding:15px 35px;background:#ffd700;
+color:#000;font-weight:bold;
+text-decoration:none;border-radius:10px
+}
+section{padding:60px 20px}
+.title{
+text-align:center;font-size:32px;
+color:#0b3d91;margin-bottom:40px
+}
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;max-width:1200px;margin:auto
+}
+.card{
+background:#fff;border-radius:20px;
+overflow:hidden;
+box-shadow:0 6px 18px rgba(0,0,0,.08)
+}
+.card img{width:100%;height:220px;object-fit:cover}
+.card-content{padding:20px}
+.card-content h3{color:#0b3d91;margin-bottom:10px}
+
+.actions{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:8px;padding:0 20px 20px
+}
+.actions button,.panel button{
+border:none;padding:12px;
+border-radius:10px;cursor:pointer;
+font-weight:bold;background:#eef3ff
+}
+.like.active{background:#ffd6d6}
+
+.comment-box,.comments-list,.flash-list{
+display:none;padding:0 20px 20px
+}
+
+textarea,input{
+width:100%;padding:12px;
+border:1px solid #ccc;
+border-radius:10px;
+margin-top:10px
+}
+textarea{height:80px;resize:none}
+
+.post{
+padding:10px;margin-top:10px;
+background:#f5f7fa;border-radius:10px
+}
+
+.flash{background:#fff8e1}
+.admin{background:#eef3ff}
+
+.panel{
+max-width:900px;margin:auto;
+background:#fff;padding:20px;
+border-radius:20px;
+box-shadow:0 6px 18px rgba(0,0,0,.08)
+}
+
+.social-links{
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+justify-content:center;
+margin-top:20px
+}
+.social-links a{
+padding:14px 22px;
+border-radius:10px;
+text-decoration:none;
+font-weight:bold;
+color:#fff
+}
+.whatsapp{background:#25D366}
+.facebook{background:#1877F2}
+.gmail{background:#EA4335}
+.message{background:#ff9800}
+.instagram{background:#d62976}
+
+.footer{
+  background:#4f7d6f;color:#fff;
+  text-align: center;padding: 25px;
+  margin-top: 30px;
+  }
+ 
+ .card video{
+   width:100% ;
+   height: 300px;
+   object-fit:cover;
+   border: radius 10px; ;
+  }
+
+.hero{
+background:url('https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+height:60vh;
+}
+
+
+
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>Collège Privé Loubo de Grand-Zattry</h1>
+  <p>Portail Officiel</p>
+</header>
+
+<section class="hero">
+  <h2>🎓 Admissions Ouvertes 2026 - 2027</h2>
+   <p>Inscrivez votre enfant dans un établissement d’excellence.</p>
+  <a href="#contacts" class="btn">Nous Contacter</a>
+</section>
+
+
+
+
+<section>
+<h2 class="title">📸 Photos des Cérémonies</h2>
+<div class="grid" id="photoGrid">
+
+<div class="card">
+ <img src="administration/administration.jpeg">
+   <div class="card-content">
+    <h3>Administration</h3>
+     <p>L'administration De L'école.</p>
+      </div>
+       <div class="actions">
+        <button class="like" onclick="toggleLike(this)">👍 <span>512</span></button>
+        <button onclick="toggleComments(this)">💬 Commentaires</button>
+       </div>
+      <div class="comment-box">
+     <textarea placeholder="Votre commentaire..."></textarea>
+    <button onclick="addComment(this)">Publier</button>
+   </div>
+  <div class="comments-list"></div>
+</div>
+
+<div class="card">
+  <img src="administration/remise.jpeg">
+   <div class="card-content">
+    <h3>Rémise Des Diplomes</h3>
+     <p>Célébration des meilleurs élèves.</p>
+      </div>
+       <div class="actions">
+        <button class="like" onclick="toggleLike(this)">👍<span>0</span></button>
+        <button onclick="toggleComments(this)">💬 Commentaires</button>
+       </div>
+      <div class="comment-box">
+     <textarea placeholder="Votre commentaire..."></textarea>
+    <button onclick="addComment(this)">Publier</button>
+   </div>
+  <div class="comments-list"></div>
+</div>
+
+<div class="card">
+  <img src="administration/ac.jpeg">
+   <div class="card-content">
+    <h3>Journée Culturelle</h3>
+     <p>Valorisation des traditions.</p>
+      </div>
+       <div class="actions">
+        <button class="like" onclick="toggleLike(this)">👍<span></span></button>
+        <button onclick="toggleComments(this)">💬 Commentaires</button>
+       </div>
+      <div class="comment-box">
+     <textarea placeholder="Votre commentaire..."></textarea>
+    <button onclick="addComment(this)">Publier</button>
+   </div>
+  <div class="comments-list"></div>
+</div>
+
+<div class="card">
+  <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=1000&q=80">
+   <div class="card-content">
+    <h3>Journée Culturelle</h3>
+     <p>Valorisation des traditions.</p>
+      </div>
+       <div class="actions">
+        <button class="like" onclick="toggleLike(this)">👍<span></span></button>
+        <button onclick="toggleComments(this)">💬 Commentaires</button>
+       </div>
+      <div class="comment-box">
+     <textarea placeholder="Votre commentaire..."></textarea>
+    <button onclick="addComment(this)">Publier</button>
+   </div>
+  <div class="comments-list"></div>
+</div>
+
+<div class="card">
+  <video controls autoplay muted loop width="600">
+    <source src="administration/video.mp4" type="video/mp4">
+  </video>
+   <div class="card-content">
+    <h3>Journée Culturelle </h3>
+     <p>Valorisation des traditions. </p>
+      </div>
+       <div class="actions">
+        <button class="like" onclick="toggleLike(this)">👍<span>0</span></button>
+        <button onclick="toggleComments(this)">💬 Commentaires</button>
+       </div>
+      <div class="comment-box">
+     <textarea placeholder="Votre commentaire..."></textarea>
+    <button onclick="addComment(this)">Publier</button>
+   </div>
+  <div class="comments-list"></div>
+</div>
+
+
+<div class="card">
+  <video controls autoplay muted loop width="600">
+    <source src="administration/video2.mp4" type="video/mp4">
+  </video>
+   <div class="card-content">
+    <h3>Journée Culturelle</h3>
+     <p>Valorisation des traditions.</p>
+      </div>
+       <div class="actions">
+        <button class="like" onclick="toggleLike(this)">👍<span></span></button>
+        <button onclick="toggleComments(this)">💬 Commentaires</button>
+       </div>
+      <div class="comment-box">
+     <textarea placeholder="Votre commentaire..."></textarea>
+    <button onclick="addComment(this)">Publier</button>
+   </div>
+  <div class="comments-list"></div>
+</div>
+
+
+<div class="card">
+  <video controls autoplay muted loop width="600">
+    <source src="administration/video3.mp4" type="video/mp4">
+  </video>
+   <div class="card-content">
+    <h3>Journée Culturelle</h3>
+     <p>Valorisation des traditions.</p>
+      </div>
+       <div class="actions">
+        <button class="like" onclick="toggleLike(this)">👍<span>0</span></button>
+        <button onclick="toggleComments(this)">💬 Commentaires</button>
+       </div>
+      <div class="comment-box">
+     <textarea placeholder="Votre commentaire..."></textarea>
+    <button onclick="addComment(this)">Publier</button>
+   </div>
+  <div class="comments-list"></div>
+</div>
+
+</div>
+</section>
+
+
+<section id="contacts">
+  <h2 class="title">📞 Contacts Officiels</h2>
+   <div class="panel" style="text-align:center;">
+    <p>Contactez facilement l’établissement :</p>
+      <div class="social-links">
+       <a href="https://wa.me/22500000000" class="whatsapp">WhatsApp</a>
+       <a href="https://facebook.com/" target="_blank" class="facebook">Facebook</a>
+      <a href="mailto:contact@college-loubo.ci" class="gmail">Gmail</a>
+    <a href="sms:+2250594720472" class="message">Message</a>
+   <a href="https://instagram.com/" target="_blank" class="instagram">Instagram</a>
+  </div>
+ </div>
+</section>
+
+<footer>
+<p>&copy; 2026 Collège Privé Loubo</p>
+</footer>
+
+<script>
+let adminOpen=false;
+
+function toggleLike(btn){
+let span=btn.querySelector("span");
+let n=parseInt(span.textContent);
+if(btn.classList.contains("active")){
+btn.classList.remove("active");
+span.textContent=n-1;
+}else{
+btn.classList.add("active");
+span.textContent=n+1;
+}
+}
+
+function toggleComments(btn){
+let card=btn.closest(".card");
+let box=card.querySelector(".comment-box");
+let list=card.querySelector(".comments-list");
+let show=box.style.display!=="block";
+box.style.display=show?"block":"none";
+list.style.display=show?"block":"none";
+}
+
+function addComment(btn){
+let box=btn.parentElement;
+let text=box.querySelector("textarea").value.trim();
+if(text==="") return;
+
+let div=document.createElement("div");
+div.className="post";
+div.textContent="💬 "+text;
+
+box.nextElementSibling.appendChild(div);
+box.querySelector("textarea").value="";
+}
+
+function toggleFlash(){
+let list=document.getElementById("flashList");
+list.style.display=list.style.display==="block"?"none":"block";
+}
+
+function openAdmin(){
+let code=document.getElementById("adminCode").value.trim();
+if(code==="ad2026"){
+adminOpen=true;
+document.getElementById("adminArea").style.display="block";
+alert("Connexion réussie");
+}else{
+alert("Code incorrect");
+}
+}
+
+function publishFlashAdmin(){
+if(!adminOpen) return;
+let text=document.getElementById("flashAdminInput").value.trim();
+if(text==="") return;
+
+let div=document.createElement("div");
+div.className="post";
+div.textContent="📢 "+text;
+
+document.getElementById("flashList").prepend(div);
+document.getElementById("flashAdminInput").value="";
+}
+
+function publishPhoto(){
+if(!adminOpen) return;
+
+let title=document.getElementById("photoTitle").value.trim();
+let desc=document.getElementById("photoDesc").value.trim();
+let file=document.getElementById("photoFile").files[0];
+
+if(title==="" || !file){
+alert("Ajoute un titre et une image");
+return;
+}
+
+let reader=new FileReader();
+
+reader.onload=function(e){
+let card=document.createElement("div");
+card.className="card";
+
+card.innerHTML=`
+<img src="${e.target.result}">
+<div class="card-content">
+<h3>${title}</h3>
+<p>${desc}</p>
+</div>
+<div class="actions">
+<button class="like" onclick="toggleLike(this)">👍 <span>0</span></button>
+<button onclick="toggleComments(this)">💬 Commentaires</button>
+</div>
+<div class="comment-box">
+<textarea placeholder="Votre commentaire..."></textarea>
+<button onclick="addComment(this)">Publier</button>
+</div>
+<div class="comments-list"></div>
+`;
+
+document.getElementById("photoGrid").prepend(card);
+
+document.getElementById("photoTitle").value="";
+document.getElementById("photoDesc").value="";
+document.getElementById("photoFile").value="";
+};
+
+reader.readAsDataURL(file);
+}
+</script>
+
+</body>
+</html>
